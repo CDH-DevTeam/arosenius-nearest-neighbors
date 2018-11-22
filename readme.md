@@ -30,11 +30,9 @@ Here we follow Douglas Duhaime's tutorial, using [Anaconda](https://www.continuu
 >```
 ># create virtual environment using python 3.5 with name '3.5'
 >conda create -n 3.5 python=3.5
-
 ># activate the virtual environment
 >source activate 3.5
 ># or sometimes 'conda activate 3.5'
-
 ># install tensorflow
 >conda install -c conda-forge tensorflow
 >```
