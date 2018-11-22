@@ -33,6 +33,7 @@ Here we follow Douglas Duhaime's tutorial, using [Anaconda](https://www.continuu
 
 ># activate the virtual environment
 >source activate 3.5
+># or sometimes 'conda activate 3.5'
 
 ># install tensorflow
 >conda install -c conda-forge tensorflow
@@ -43,9 +44,7 @@ Here we follow Douglas Duhaime's tutorial, using [Anaconda](https://www.continuu
 
 The next step is to download a sample image and run classify_image.py, the first time it runs it will download the trained model that TensorFlow uses to identify the images.
 
-
-
-# run classify script in anaconda prompt
+## rRun classify script
 # populates 'image_vectors' folder with image vectors, do this for all image types and move data from image_vectors to right folder for each type
 
 conda activate 3.5
