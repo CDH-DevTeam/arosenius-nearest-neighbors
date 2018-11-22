@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+image_vectors*/*.npz
+*.jpg
+nearest_neighbors*/*.json
+image_tsne_projections*.json
+models
+
+image_to_labels.json
+images_*_ids.json
