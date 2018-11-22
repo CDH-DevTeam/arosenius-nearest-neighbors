@@ -1,6 +1,6 @@
 # Identifying similar images in the Ivar Arosenius archive
 
-This repository is based on ["Identifying Similar Images with TensorFlow"](https://douglasduhaime.com/posts/identifying-similar-images-with-tensorflow.html) by [Douglas Duhaime](https://douglasduhaime.com/), [Yale University's Digital Humanities Lab](http://dhlab.yale.edu/). The code has been modified to fit the Ivar Arosenius online archive. These scripts identifies similar images in the whole collection.
+This repository is based on ["Identifying Similar Images with TensorFlow"](https://douglasduhaime.com/posts/identifying-similar-images-with-tensorflow.html) by [Douglas Duhaime](https://douglasduhaime.com/), [Yale University's Digital Humanities Lab](http://dhlab.yale.edu/). The code has been modified to fit the [Ivar Arosenius online archive](http://aroseniusarkivet.org). These scripts identifies similar images in the whole collection.
 The output of these scripts can bee seen in the "Liknande" section for each artwork and photograph in the archive and in the "Bildrelationer" TSNE Projection visualization.
 
 ## Running the scripts
