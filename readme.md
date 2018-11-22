@@ -40,10 +40,11 @@ Here we follow Douglas Duhaime's tutorial, using [Anaconda](https://www.continuu
 
 >If you are in the virtual environment and you type “python”, you’ll enter the Python interpreter. Inside the interpreter, you should be able to load Tensorflow by typing “import tensorflow”. If no error springs, you’ve installed TensorFlow and can leave the interpreter by typing “quit()”. If you do get an error, you’ll need to install TensorFlow before proceeding."
 
-The next step is to download a sample image and run classify_image.py, the first time it runs it will download the trained model that TensorFlow uses to identify the images.
+Once Anaconda has been install along with TensorFlow its time run classify_image.py on a sample .jpg image file, the first time it runs it will download the trained model that TensorFlow uses to identify the images.
 
 ## Run classify script
-This srcipt populates the 'image_vectors' folder with image vectors, do this for all image types and move data from image_vectors to right folder for each type.
+`classify_images.py` is a modified version of a script with the same name by Douclas Duhaime. The script has been adapted to fit the Arosenius project needs.
+This script populates the 'image_vectors' folder with image vector files. Do this for all image types and move data from image_vectors to right folder for each type.
 ```
 conda activate 3.5
 python classify_images.py images_photographs
