@@ -63,23 +63,26 @@ python cluster_vectors.py --input_dataset_suffix=photographs
 After this, json files in the `nearest_neighbors_konstverk` folder needs to be copied to the `arosenius-archive-gui\www\nearest_neighbors\konstverk` folder in the archive website repository. The same applies to json files in the `nearest_neighbors_photographs` folder that needs to be copied to `arosenius-archive-gui\www\nearest_neighbors\photographs`
 
 ## Run tsne vector projections script
+This script creates a json file where each image has been places in two-dimensional space with x and y coordinates where similar images are places near each other. These files are used in the "bildrelationer" visualization on the archive website.
+This script has to be run for each of the image types (artwork and photographs) and also on the whole collection of both types. That is because the user can choose between three different datasets in the visualization (artworks, photographs or both)
 ```
 python get_tsne_vector_projections.py --input_dataset_suffix=all
 python get_tsne_vector_projections.py --input_dataset_suffix=konstverk
 python get_tsne_vector_projections.py --input_dataset_suffix=photographs
 ```
 
-
-## fetch images sizes for image_tsne_projections_*.json files
-
+## Finalizing the datasets
+Next step is to fetch image size information for each entry in the image_tsne_projections_*.json files. This has to be done so that the visualization can display the images in right ratio.
+```
 python get_image_sizes.py --json_file=image_tsne_projections_all.json
 python get_image_sizes.py --json_file=image_tsne_projections_konstverk.json
 python get_image_sizes.py --json_file=image_tsne_projections_photographs.json
+```
 
-
-
-## get image file names for given ids in tsne datasets
-
+Next is to join document IDs in the database with right image file names and store it in the image_tsne_proections_*.json files. This enables us to fetch cached image thumnails directly from the server.
+```
 python get_tsne_image_names.py
+```
 
-## move all image_tsne_projections_*.json files to arosenius-archive-gui\www\tsne_data 
+## Moving the datasets
+The last step is to move all the image_tsne_projections_*.json files to the `arosenius-archive-gui\www\tsne_data` folder in the archive website repository.
