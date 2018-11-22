@@ -42,35 +42,35 @@ Here we follow Douglas Duhaime's tutorial, using [Anaconda](https://www.continuu
 
 The next step is to download a sample image and run classify_image.py, the first time it runs it will download the trained model that TensorFlow uses to identify the images.
 
-## rRun classify script
-# populates 'image_vectors' folder with image vectors, do this for all image types and move data from image_vectors to right folder for each type
-
+## Run classify script
+This srcipt populates the 'image_vectors' folder with image vectors, do this for all image types and move data from image_vectors to right folder for each type.
+```
 conda activate 3.5
 python classify_images.py images_photographs
+# move all files from image_vectors to image_vectors_photographs
 python classify_images.py images_konstverk
+# move all files from image_vectors to image_vectors_konstverk
 python classify_images.py images_all
+# move all files from image_vectors to image_vectors_all
+```
 
-
-
-
-# run cluster script
-# copy output to arosenius-archive-gui\www\nearest_neighbors\konstverk and arosenius-archive-gui\www\nearest_neighbors\photographs
-
+## Run cluster script
+Here we create json indexes for each image of both types. These indexes are used to display similar images on the archive website.
+```
 python cluster_vectors.py --input_dataset_suffix=konstverk
 python cluster_vectors.py --input_dataset_suffix=photographs
+```
+After this, json files in the `nearest_neighbors_konstverk` folder needs to be copied to the `arosenius-archive-gui\www\nearest_neighbors\konstverk` folder in the archive website repository. The same applies to json files in the `nearest_neighbors_photographs` folder that needs to be copied to `arosenius-archive-gui\www\nearest_neighbors\photographs`
 
-
-
-
-# run tsne vector projections script
-
+## Run tsne vector projections script
+```
 python get_tsne_vector_projections.py --input_dataset_suffix=all
 python get_tsne_vector_projections.py --input_dataset_suffix=konstverk
 python get_tsne_vector_projections.py --input_dataset_suffix=photographs
+```
 
 
-
-# fetch images sizes for image_tsne_projections_*.json files
+## fetch images sizes for image_tsne_projections_*.json files
 
 python get_image_sizes.py --json_file=image_tsne_projections_all.json
 python get_image_sizes.py --json_file=image_tsne_projections_konstverk.json
@@ -78,8 +78,8 @@ python get_image_sizes.py --json_file=image_tsne_projections_photographs.json
 
 
 
-# get image file names for given ids in tsne datasets
+## get image file names for given ids in tsne datasets
 
 python get_tsne_image_names.py
 
-# move all image_tsne_projections_*.json files to arosenius-archive-gui\www\tsne_data 
+## move all image_tsne_projections_*.json files to arosenius-archive-gui\www\tsne_data 
